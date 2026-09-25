@@ -72,27 +72,21 @@ Add the package to `plugins` in your project's `opencode.jsonc`:
 {
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
-    "/home/user/projects/opencode-plugins/opencode-v2-cli-codex-usage"
+    "opencode-v2-cli-codex-usage"
   ]
 }
 ```
 
-### Option 3: Local Plugin Discovery Directory (Automatic Discovery)
+Or reference a local checkout:
 
-You can place, symlink, or extract the plugin inside OpenCode's plugin discovery directories without needing to edit any configuration file:
-
-- **Global**: `~/.config/opencode/plugins/codex-usage/`
-- **Project**: `<project-root>/.opencode/plugins/codex-usage/`
-
-If you packaged the plugin using `npm pack`:
-```bash
-npm pack
-mkdir -p ~/.config/opencode/plugins/codex-usage
-tar -xzf opencode-v2-cli-codex-usage-*.tgz -C ~/.config/opencode/plugins/codex-usage --strip-components=1
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugins": [
+    "/home/user/projects/opencode-plugins/opencode-v2-cli-codex-usage"
+  ]
+}
 ```
-OpenCode automatically discovers and activates plugins in `~/.config/opencode/plugins/` on startup.
-
-> **Note for V1 users:** OpenCode V2 does not support passing a direct archive file path (e.g. `file:///.../plugin.tgz`) under `plugins`—configured paths must point to a directory or a registered npm package name.
 
 ---
 

@@ -70,5 +70,14 @@
     "sidebar",
     "tui",
     "cli"
-  ]
+  ],
+  "author": "Ahmad Nawawi <ahmadmcer@gmail.com>",
+  "homepage": "https://github.com/ahmadmcer/opencode-v2-cli-codex-usage#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadmcer/opencode-v2-cli-codex-usage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmadmcer/opencode-v2-cli-codex-usage/issues"
+  }
 }
