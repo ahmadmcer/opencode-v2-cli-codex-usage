@@ -185,7 +185,9 @@ export function CodexUsageSidebar(props: { context: PluginContext; sessionID?: s
     const current = dataState()
     const first = current.windows[0]
     if (current.status === "ok" && first) {
-      return `(${first.label} ${remainingPercent(first.usedPercent).toFixed(1)}% left)`
+      const rem = remainingPercent(first.usedPercent)
+      const remStr = Number.isInteger(rem) ? `${rem}%` : `${rem.toFixed(1)}%`
+      return `(${first.label} ${remStr} left)`
     }
     if (current.status === "no-config") return "(not signed in)"
     if (current.status === "disabled") return "(disabled)"
@@ -204,16 +206,15 @@ export function CodexUsageSidebar(props: { context: PluginContext; sessionID?: s
       {/* Header Row */}
       <box
         flexDirection="row"
-        gap={1}
         onMouseUp={toggleCollapse}
       >
-        <text fg={theme.text.base}>{viewState.collapsed ? "▶" : "▼"}</text>
         <text fg={theme.text.base}>
+          {viewState.collapsed ? "▶ " : "▼ "}
           <b>Codex Usage</b>
         </text>
         <Show when={viewState.collapsed}>
           <text fg={theme.text.muted}>
-            <span style={{ fg: theme.text.muted }}>{` ${summaryText()}`}</span>
+            {` ${summaryText()}`}
           </text>
         </Show>
       </box>
