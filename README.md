@@ -48,17 +48,6 @@ Add the plugin to your global `~/.config/opencode/cli.json` (or `$XDG_CONFIG_HOM
 {
   "$schema": "https://opencode.ai/v2/cli.json",
   "plugins": [
-    "/home/user/projects/opencode-plugins/opencode-v2-cli-codex-usage"
-  ]
-}
-```
-
-Or when installed from npm:
-
-```json
-{
-  "$schema": "https://opencode.ai/v2/cli.json",
-  "plugins": [
     "opencode-v2-cli-codex-usage"
   ]
 }
@@ -73,17 +62,6 @@ Add the package to `plugins` in your project's `opencode.jsonc`:
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
     "opencode-v2-cli-codex-usage"
-  ]
-}
-```
-
-Or reference a local checkout:
-
-```jsonc
-{
-  "$schema": "https://opencode.ai/config.json",
-  "plugins": [
-    "/home/user/projects/opencode-plugins/opencode-v2-cli-codex-usage"
   ]
 }
 ```
