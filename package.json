@@ -4,16 +4,16 @@
   "description": "OpenCode V2 CLI plugin that displays OpenAI Codex usage in the sidebar",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./index.js"
     },
     "./tui": {
       "types": "./dist/tui.d.ts",
-      "import": "./dist/tui.js"
+      "import": "./tui.js"
     }
   },
   "scripts": {
@@ -23,6 +23,9 @@
   },
   "files": [
     "dist",
+    "index.js",
+    "tui.js",
+    "core.js",
     "README.md",
     "LICENSE"
   ],
